@@ -11,3 +11,6 @@ This project is similiar to linktree in its sense to give information about an i
 
 ## Run
 ```npm run start```
+
+### The Site
+![alt text](./landing-page.png)
