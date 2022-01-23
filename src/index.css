@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* base styles */
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+
+.App {
+  background-color: #fcf0cc;
+}
+
+.home .socials{
+  margin: auto;
+}
+
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+}
+.navbar h1 {
+  color: #f1356d;
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+  color: #f1356d;
+}
+.content {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* social media links */
+.socials {
+  width: 350px;
+  text-align:center;
+}
+
+.socials ul {
+  padding-right: 40px; /* manages the the right side length of the social media links */
+  display: grid;
+  /* grid-template-columns: repeat(2, 1fr); */
+  list-style-type: none;
+}
+
+.socials ul li {
+  transition: box-shadow .3s;
+  background-color: #f1356d;
+  background-image: linear-gradient(45deg, #d70f4b, #f1356d, #f24076);
+  border-radius: 30px;
+  text-align: center;
+  border: 1px solid #faf7f7ec;
+  padding: 5px;
+  margin: 4px;
+}
+
+.socials li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 2px rgba(247, 246, 244, 0.829); 
+}
+
+.socials a {
+  display: block; 
+  color: white;
+  text-decoration: none;
+}
+
+
+/* profile and summary */
+.profile .my-face img {
+  height: 170px;
+  width: 170px;
+  object-fit: cover;
+  border-radius: 70%;
+}
+.profile .my-face {
+  margin-bottom: 17px;
+}
+.profile .summary {
+  margin-bottom: 15px;
+  color: "white";
+}
+
+
+/* twitter timeline */
+.twitter-container {
+  margin-top: 10px;
+}
