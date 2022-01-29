@@ -11,7 +11,9 @@ const SocialMedia = ({theme}) => {
                 <li style={{ backgroundImage: "linear-gradient(45deg, #ffdc7d, #f46f30, #4c5fd7, #7232bd, #c32aa3 )", border: theme.socialBorder }}>
                     <a rel="noopener" href="https://www.instagram.com/gespi.xyz/">Instagram</a>
                 </li>
-                <li style={{ color: "white", border: theme.socialBorder  }}>NFT Project (coming soon)</li> {/* enable <a> once NFT site is ready */}
+                <li style={{ color: "white", border: theme.socialBorder  }}>
+                <a rel="noopener" href="https://3wordnft.gespi.xyz">3 Word NFTs (rinkeby)</a>
+                </li> {/* enable <a> once NFT site is ready */}
             </ul>
         </div>
     );
