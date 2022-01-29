@@ -26,7 +26,7 @@ function App() {
   // })
 
     const switchTheme = () => {
-        if (theme.mode == "light")
+        if (theme.mode === "light")
             setTheme({
               "mode": "dark",
               "image": "/images/light-mode.png",
@@ -36,7 +36,7 @@ function App() {
               "navBottomBorder": "1px solid #26212c"
             })
         
-        if (theme.mode == "dark")
+        if (theme.mode === "dark")
             setTheme({
               "mode": "light",
               "image": "/images/dark-mode.png",

@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
-
 
 const Twitter = ({theme}) => {
 

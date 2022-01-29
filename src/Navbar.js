@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Theme from "./Theme";
 
 const Navbar = ({theme, themeOnClick}) => {
