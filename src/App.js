@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import { useState } from 'react';
-import './App.css';
+import './index.css';
 import Home from './Home';
 import Navbar from './Navbar';
 
@@ -11,8 +11,9 @@ function App() {
     "bgColor": "#fcf0cc",
     "textColor": "#333",
     "socialBorder": "1px solid #faf7f7ec",
-    "navBottomBorder": "1px solid #fef8e7"
+    "navBottomBorder": "1px solid #fef8e7",
   })
+  document.body.style.backgroundColor = theme.bgColor;
 
   // start Dark mode as default
 
@@ -26,7 +27,7 @@ function App() {
   // })
 
     const switchTheme = () => {
-        if (theme.mode === "light")
+        if (theme.mode === "light") // check for current theme and switch it to the other
             setTheme({
               "mode": "dark",
               "image": "/images/light-mode.png",
@@ -35,8 +36,9 @@ function App() {
               "socialBorder": "1px solid #1d0505ec",
               "navBottomBorder": "1px solid #26212c"
             })
+            document.body.style.backgroundColor = "#1f1b24"
         
-        if (theme.mode === "dark")
+        if (theme.mode === "dark") 
             setTheme({
               "mode": "light",
               "image": "/images/dark-mode.png",
@@ -45,6 +47,7 @@ function App() {
               "socialBorder": "1px solid #faf7f7ec",
               "navBottomBorder": "1px solid #fef8e7"
             })
+            document.body.style.backgroundColor = "#fcf0cc"
         
         console.log("switched Theme: " + theme.mode)
     }

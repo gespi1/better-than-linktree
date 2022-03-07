@@ -8,6 +8,7 @@
 }
 
 .App {
+  text-align: center;
   background-color: #fcf0cc;
 }
 
@@ -38,7 +39,7 @@
   color: #f1356d;
 }
 .content {
-  max-width: 600px;
+  max-width: 450px;
   margin: 20px auto;
   padding: 20px;
 }
@@ -89,9 +90,16 @@
 .profile .my-face {
   margin-bottom: 17px;
 }
-.profile .summary {
-  margin-bottom: 15px;
+.profile .titles {
   color: "white";
+}
+.profile .summary {
+  margin: auto;
+  color: "white";
+  /* border: 3px solid green; */
+}
+.profile {
+  margin: auto;
 }
 
 
