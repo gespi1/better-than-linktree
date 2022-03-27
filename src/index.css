@@ -30,6 +30,17 @@
 .navbar .links {
   margin-left: auto;
 }
+
+.navbar .links ul {
+  float: left;
+}
+
+.navbar .links  ul li {
+  float: left;
+  padding: 2px 5px;
+  border: 1px solid black;
+}
+
 .navbar a {
   margin-left: 16px;
   text-decoration: none;

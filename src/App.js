@@ -1,56 +1,93 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './index.css';
 import Home from './Home';
 import Navbar from './Navbar';
+// require('dotenv').config();
+
 
 function App() {
-  const [theme, setTheme] = useState({
+  // variables
+  const URL = "http://localhost:3000/"
+  const themeCacheName = "theme"
+  const lightTheme = {
     "mode": "light",
     "image": "/images/dark-mode.png",
     "bgColor": "#fcf0cc",
     "textColor": "#333",
     "socialBorder": "1px solid #faf7f7ec",
     "navBottomBorder": "1px solid #fef8e7",
-  })
+  }
+  const darkTheme = {
+    "mode": "dark",
+    "image": "/images/light-mode.png",
+    "bgColor": "#1f1b24",
+    "textColor": "white",
+    "socialBorder": "1px solid #1d0505ec",
+    "navBottomBorder": "1px solid #26212c"
+  }
+
+  // states
+  const [theme, setTheme] = useState(lightTheme)
+  //set bg color
   document.body.style.backgroundColor = theme.bgColor;
 
-  // start Dark mode as default
+  /////// functions
+  const switchTheme = () => {
+    let switchTo = ""
 
-  // const [theme, setTheme] = useState({
-  //   "mode": "dark",
-  //   "image": "/images/light-mode.png",
-  //   "bgColor": "#1f1b24",
-  //   "textColor": "white",
-  //   "socialBorder": "1px solid #1d0505ec",
-  //   "navBottomBorder": "1px solid #26212c"
-  // })
-
-    const switchTheme = () => {
-        if (theme.mode === "light") // check for current theme and switch it to the other
-            setTheme({
-              "mode": "dark",
-              "image": "/images/light-mode.png",
-              "bgColor": "#1f1b24",
-              "textColor": "white",
-              "socialBorder": "1px solid #1d0505ec",
-              "navBottomBorder": "1px solid #26212c"
-            })
-            document.body.style.backgroundColor = "#1f1b24"
-        
-        if (theme.mode === "dark") 
-            setTheme({
-              "mode": "light",
-              "image": "/images/dark-mode.png",
-              "bgColor": "#fcf0cc",
-              "textColor": "#333",
-              "socialBorder": "1px solid #faf7f7ec",
-              "navBottomBorder": "1px solid #fef8e7"
-            })
-            document.body.style.backgroundColor = "#fcf0cc"
-        
-        console.log("switched Theme: " + theme.mode)
+    if (theme.mode === "light") { // check for current theme and switch it to the other
+      switchTo = darkTheme
+    } else if (theme.mode === "dark") {
+      switchTo = lightTheme
     }
+    setTheme(switchTo)
+    console.log("switched Theme");
+  }
+
+  // checks for cache, if it doesnt exists takes the default theme and sets it in cache.
+  // if cache is found use the theme in cache. 
+  const initThemeCache = async (cacheName, url) => {
+    if (typeof caches === 'undefined') return false;
+    
+    const cacheStorage = await caches.open(cacheName);
+    const cachedResponse = await cacheStorage.match(url);
+    
+    // If no cache exists
+    if (!cachedResponse || !cachedResponse.ok) {
+      console.log('no cache found');
+      console.log("set default theme on cache");
+      addDataIntoCache(cacheName, url, theme);
+      return false
+    } else {
+      return cachedResponse.json().then((item) => {
+        setTheme(item);
+      });
+    }
+  }
+
+  // adds an item in cache
+  const addDataIntoCache = (cacheName, url, data) => {
+    // Converting our response into Actual Response form
+    const d = new Response(JSON.stringify(data));
+  
+    if ('caches' in window) {
+      // Opening given cache and putting our data into it
+      caches.open(cacheName).then((cache) => {
+        cache.put(url, d);
+        console.log('data added into cache:', cacheName)
+      });
+    }
+  }; 
+
+	useEffect(() => {
+		initThemeCache(themeCacheName, URL);
+	}, []);
+
+  useEffect(() => {
+    addDataIntoCache(themeCacheName, URL, theme);
+    document.body.style.backgroundColor = theme.bgColor;
+  }, [theme]);
 
   return (
     <Router>
