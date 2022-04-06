@@ -1,9 +1,8 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import './index.css';
+import React from 'react';
 import Home from './Home';
 import Navbar from './Navbar';
-// require('dotenv').config();
 
 
 function App() {
@@ -94,11 +93,9 @@ function App() {
       <div className="App" style={{backgroundColor: theme.bgColor}}>
         <Navbar theme={theme} themeOnClick={switchTheme}/>
         <div className="content">
-          <Switch>
-            <Route exact path='/'> 
-              <Home theme={theme}/>
-            </Route>
-          </Switch>
+          <Routes>
+            <Route exact path='/' element={<Home theme={theme}/>}/>
+          </Routes>
         </div>
       </div>
     </Router>

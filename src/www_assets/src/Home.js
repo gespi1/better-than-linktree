@@ -1,6 +1,7 @@
 import Profile from "./Profile";
 import SocialMedia from "./SocialMedia";
 import Twitter from "./Twitter";
+import * as React from "react";
 
 const Home = ({theme}) => {
     return ( 

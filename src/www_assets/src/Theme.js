@@ -1,3 +1,5 @@
+import * as React from "react";
+
 const Theme = ({theme, themeOnClick}) => {    
     return ( 
         <div className="theme-icon">

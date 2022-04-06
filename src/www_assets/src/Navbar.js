@@ -1,6 +1,7 @@
 // import { Link } from "react-router-dom";
 
 import Theme from "./Theme";
+import * as React from "react";
 
 const Navbar = ({theme, themeOnClick}) => {
     return ( 
