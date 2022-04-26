@@ -15,4 +15,5 @@ jobs:
           identity: ${{ secrets.DFX_IDENTITY }}
           wallets: ${{ secrets.DFX_WALLETS }}
       - name: Show success message
-        run: echo success!      
+        run: echo success!
+              
