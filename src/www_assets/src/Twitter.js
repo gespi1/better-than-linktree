@@ -1,4 +1,6 @@
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
+import * as React from "react";
+
 
 const Twitter = ({theme}) => {
 

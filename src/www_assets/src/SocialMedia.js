@@ -1,3 +1,5 @@
+import * as React from "react";
+
 const SocialMedia = ({theme}) => {
     return ( 
         <div className="socials">
