@@ -8,9 +8,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install dependencies
         run: npm install
+      - name: list directories
+        run: ls
       - name: Deploy canisters
         id: deploy
         uses: fleekhq/ic-deploy-action@master
+        run: ls
         with:
           identity: ${{ secrets.DFX_IDENTITY }}
           wallets: ${{ secrets.DFX_WALLETS }}
