@@ -9,7 +9,7 @@ const Profile = ({theme}) => {
             </div>
             <div className="my-name">
                 <b style={{
-                    "color": theme.textColor,
+                    "color": "#f1356d",
                     "fontSize": "130%"
                 }}>
                         Giancarlo Espinoza
