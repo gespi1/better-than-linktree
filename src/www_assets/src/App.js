@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import React from 'react';
 import Home from './Home';
 import Navbar from './Navbar';
+import Blog from './Blog';
 
 
 function App() {
@@ -95,6 +96,7 @@ function App() {
         <div className="content">
           <Routes>
             <Route exact path='/' element={<Home theme={theme}/>}/>
+            {/* <Route exact path='/blog' element={<Blog theme={theme}/>}/> */}
           </Routes>
         </div>
       </div>
