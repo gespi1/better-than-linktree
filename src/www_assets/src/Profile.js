@@ -24,7 +24,7 @@ const Profile = ({theme}) => {
             <br/>
             <div className="summary">
                 <p style={{"color": theme.textColor}}>
-                    Welcome 🖖, I am a seasoned DevOps Engineer passionate about automating the boring stuff and building on the latest technology. If I am not automating, I am usually looking through the latest Crypto trends ... or getting my butt kicked on Elden Ring.</p>
+                    Welcome 🖖, I am a seasoned DevOps Engineer passionate about automating the boring stuff, increasing velocity and building on the latest technology. If I am not automating, I am usually looking through the latest Crypto trends ... or getting my butt kicked on Elden Ring.</p>
             </div>
             <br/>
         </div>
