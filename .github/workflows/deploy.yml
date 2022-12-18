@@ -4,6 +4,8 @@ jobs:
   test-deploy:
     runs-on: ubuntu-latest
     name: A job to deploy canisters to the IC
+    env:
+      DFX_VERSION: "0.10.1"
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
