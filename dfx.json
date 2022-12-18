@@ -5,7 +5,6 @@
         "entrypoint": "src/www_assets/src/index.html"
       },
       "source": [
-        "src/www_assets/assets",
         "dist/www_assets/"
       ],
       "type": "assets"
